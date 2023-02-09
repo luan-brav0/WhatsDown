@@ -20,6 +20,10 @@ const styles = StyleSheet.create({
         backgroundColor: 'lightGray',
     },
     container: {
+        flex: 1,
+        // height: 'full',
+        width: '100%',
         backgroundColor: 'green',
+        borderWidth: 2
     }
 })
