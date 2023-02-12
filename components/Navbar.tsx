@@ -16,14 +16,18 @@ const Navbar = (props: Props) => {
 export default Navbar
 
 const styles = StyleSheet.create({
-    p: {
-        backgroundColor: 'lightGray',
-    },
-    container: {
-        flex: 1,
-        // height: 'full',
-        width: '100%',
-        backgroundColor: 'green',
-        borderWidth: 2
-    }
+  p: {
+    backgroundColor: 'lightGray',
+  },
+  container: {
+    flex: 1 / 12,
+    width: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
+
+    // height: 10,
+    backgroundColor: 'green',
+    borderWidth: 2,
+  }
+
 })
