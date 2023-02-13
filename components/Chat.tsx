@@ -1,26 +1,29 @@
 import React, { FC, useState } from 'react'
 import { StyleSheet, TextInput, Text, View, Button, FlatList } from 'react-native'
 
-type Props = {}
+type Props = {
+    author: string | null
+    setAuthor: React.Dispatch<React.SetStateAction<string | null>>
+}
 
 const Chat: FC<Props> = (props): JSX.Element => {
+    const [author, setAuthor] = [props.author, props.setAuthor];
+    setAuthor("author_here")
+    const [inputValue, setInputValue] = useState<string>('');
+    const [messages, setMessages] = useState<Message[]>([]);
     type Message = {
         key: string,
         content: string,
-        chat?: string,  
+        chat?: string,
         time?: Date,
-        author?: string,
+        author?: string | null,
         authorPhotoPath?: string,
     };
-    const [inputValue, setInputValue] = useState<string>('');
-    const [messages, setMessages] = useState<Message[]>([]);
-
     const _sendPress = (): void => {
         if (inputValue) {
-            let curAuthor = 'lul'
             let curTime = new Date();
 
-            let curMessage: Message = { key: `${inputValue} @ ${curTime.toString()}`, content: inputValue, time: curTime, author: curAuthor  };
+            let curMessage: Message = { key: `${inputValue} @ ${curTime.toString()}`, content: inputValue, time: curTime, author: author };
 
             setMessages(prevMessages => [...prevMessages, curMessage]);
 
@@ -33,7 +36,7 @@ const Chat: FC<Props> = (props): JSX.Element => {
         <View style={styles.container}>
             {messages &&
                 (<View style={styles.messagesCont}>
-                    {messages.map(({key, content, author, time }) => (
+                    {messages.map(({ key, content, author, time }) => (
                         <Text key={key} style={styles.message}> {content} by {author} @ {time?.toString()}</Text>
                     ))}
                 </View>)

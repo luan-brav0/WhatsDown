@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@expo/webpack-config": "^0.17.4",
+    "@supabase/supabase-js": "^2.7.1",
     "caniuse-lite": "^1.0.30001451",
     "expo": "~47.0.12",
     "expo-status-bar": "~1.4.2",

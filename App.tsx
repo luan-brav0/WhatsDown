@@ -1,13 +1,14 @@
-// import { StatusBar } from 'expo-status-bar';
+import { useState } from 'react';
 import { Platform, SafeAreaView, StatusBar, StyleSheet, Text, View } from 'react-native';
 import Chat from "./components/Chat"
 import Navbar from "./components/Navbar"
 
 export default function App() {
+  const [author, setAuthor] = useState<string | null>(null)
   return (
     <SafeAreaView style={styles.container}>
       <Navbar />
-      <Chat />
+      <Chat author={author} setAuthor={setAuthor} />
     </SafeAreaView>
   );
 }
