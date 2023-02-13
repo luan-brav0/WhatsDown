@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Platform, SafeAreaView, StatusBar, StyleSheet, Text, View } from 'react-native';
-import Chat from "./components/Chat"
-import Navbar from "./components/Navbar"
+import Chat from "./src/components/Chat"
+import Navbar from "./src/components/Navbar"
 
 export default function App() {
   const [author, setAuthor] = useState<string | null>(null)
