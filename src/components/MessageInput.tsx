@@ -21,7 +21,6 @@ const MessageInput: FC<Props> = (props) => {
 
     const _onChangeText = (text: string): void => setInputValue(text)
 
-
     return (
         <View style={styles.inputCont}>
             <TextInput style={styles.input}
