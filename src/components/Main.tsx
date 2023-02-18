@@ -1,13 +1,14 @@
-import { Pressable, StyleSheet, Text, View, Image, TextInput } from 'react-native'
-import React from 'react'
+import { Pressable, StyleSheet, Text, View, Image, TextInput, Button } from 'react-native'
+import React, { useState } from 'react'
 
 const Main = () => {
+
     return (
         <View style={styles.main}>
             <TextInput style={styles.email} placeholder='e-mail' />
             <Pressable style={styles.pressLogIn}>
                 {/* why svg image doesn't f-ing work */}
-                {/* <Image srcSet={require('./images/chat-app-logo.svg')} /> */}
+                {/* <Image source={require('./images/chat-app-logo.svg')} /> */}
                 <Text>Enter</Text>
             </Pressable>
         </View>
